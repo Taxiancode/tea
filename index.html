@@ -54,10 +54,19 @@
 
     <div class="container relative mx-auto flex px-5 mt-12 items-center justify-center">
       <div class="text-center text-white max-w-4xl">
-        <h1 class="title-font text-1xl sm:text-5xl md:text-5xl font-bold mb-6 uppercase inline-block"
+        <h1 class="title-font text-1xl sm:text-5xl md:text-5xl font-bold mb-6 uppercase inline-block mobile-margin"
           style="color: white; font-family: 'Cormorant Unicase', serif; background-color: rgba(0, 0, 0, 0.6); padding: 10px 16px; border-radius: 12px;">
           Har chai ek nayi shuruaat, naye bharose ke saath.
         </h1>
+
+        <style>
+          @media (max-width: 640px) {
+            .mobile-margin {
+              margin: 40px 10px;
+              font-size: 1.2rem;
+            }
+          }
+        </style>
 
 
         <p class="mb-8 text-gray-600 leading-relaxed text-base sm:text-lg inline-block"
@@ -68,20 +77,20 @@
 
         <div class="p-5 pt-1 flex-wrap flex items-center gap-2 justify-center">
 
-          <div class="bg-gradient-to-r flex-auto from-gray-800 to-black-100 shadow-lg rounded-lg p-2">
-            <h3 class="text-sm text-white text-center">Regular Quality</h3>
+          <div class="bg-gradient-to-r flex-auto from-gray-900 shadow-lg rounded-lg p-4">
+            <h3 class="text-sm text-gray-100 text-center">Regular Quality</h3>
           </div>
 
-          <div class="bg-gradient-to-r flex-auto from-gray-800 to-black-100 shadow-lg rounded-lg p-2">
-            <h3 class="text-sm text-white text-center">High Quality</h3>
+          <div class="bg-gradient-to-r flex-auto from-gray-900 shadow-lg rounded-lg p-4">
+            <h3 class="text-sm text-gray-100 text-center">High Quality</h3>
           </div>
 
-          <div class="bg-gradient-to-r flex-auto from-gray-800 to-black-100 shadow-lg rounded-lg p-2">
-            <h3 class="text-sm text-white text-center">Price Friendly </h3>
+          <div class="bg-gradient-to-r flex-auto from-gray-900 shadow-lg rounded-lg p-4">
+            <h3 class="text-sm text-gray-100 text-center">Price Friendly </h3>
           </div>
 
-          <div class="bg-gradient-to-r flex-auto from-gray-800 to-black-100 shadow-lg rounded-lg p-2">
-            <h3 class="text-sm text-white text-center">Fresh off the line</h3>
+          <div class="bg-gradient-to-r flex-auto from-gray-900 shadow-lg rounded-lg p-4">
+            <h3 class="text-sm text-gray-100 text-center">Fresh off the Line</h3>
           </div>
 
         </div>
@@ -178,7 +187,7 @@
         style="border-color: #c6c6c6;">
 
         <!-- Heading with Lines INSIDE Border -->
-        <div class="flex items-center justify-center mb-10 w-full">
+        <div class="items-center justify-center mb-10 w-full">
           <div class="h-[1px] w-20 sm:w-32 bg-gray-300"></div>
           <h2 class="text-2xl sm:text-4xl font-bold text-gray-900 mx-4">
             End-to-end
@@ -256,32 +265,35 @@
 
             <div class="border-r border-[1px] p-6" style="border-color:#c6c6c6;">
               <p class="font-medium font-bold text-black">For Business </p>
-              <ul class="mt-6 space-y-4 text-sm text-gray-900">
+              <ul class="mt-6 text-sm text-gray-900">
 
-                <p class="font-medium" style="color: rgb(65, 65, 65);">For Large Order, Tea or Hotels Chain, Become
+                <p class="font-medium mb-2" style="color: rgb(65, 65, 65);">For Large Order, Retail, Tea or Hotels
+                  Chain, Become
                   Branch partner </p>
+                <p class="font-medium mb-2" style="color: rgb(65, 65, 65);"><span style="color: rgb(230, 98, 98);">Note:
+                  </span> Please also share your contact details and area PIN code along with your enquiry.</p>
                 <!-- <li class="flex items-center gap-3">
                   <span>📞</span>
                   <a class="hover:text-black transition">+91 7042408758</a>
                 </li> -->
 
-                <!-- <li class="flex items-center gap-3">
+                <li class="flex items-center gap-3">
                   <span>✉️</span>
-                  <a href="mailto:info@example.com" class="hover:text-black transition">partner@sartajtea.com</a>
-                </li> -->
+                  <a href="mailto:partner@sartajtea.com" class="hover:text-black transition">partner@sartajtea.com</a>
+                </li>
 
-                <li class="flex items-start gap-3">
+                <!-- <li class="flex items-start gap-3">
                   <span class="mt-1">📍</span>
                   <p class="leading-relaxed">
                     Salcon Rasvillas, D1, Saket District Centre, Sector 6, New Delhi, Delhi 110017
                   </p>
-                </li>
+                </li> -->
               </ul>
             </div>
 
             <!-- Company Block 2 -->
             <div class="p-6">
-              <p class="font-medium text-black">Customer Care / Order On WhatsApp</p>
+              <p class="font-medium text-black">Customer Care</p>
 
               <ul class="mt-6 space-y-4 text-sm text-gray-900">
                 <!-- <li class="flex items-center gap-3">
@@ -341,4 +353,3 @@
 </body>
 
 </html>
-
