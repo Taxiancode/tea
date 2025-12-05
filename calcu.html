@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Commission Calculator</title>
+
+  <style>
+    body { font-family: ui-sans-serif, system-ui; }
+  </style>
+</head>
+
+<body class="min-h-screen p-5 pb-28 text-white" style="background-color:#151515;">
+
+  <!-- Company Name -->
+  <h2 class="text-center mb-4 mt-3 tracking-wide">Sartaj tea</h2>
+
+  <div class="max-w-md mx-auto space-y-4">
+
+    <!-- PRODUCT 1 -->
+    <div class="p-4 rounded-2xl shadow-lg" style="background-color:#222222;">
+      <div class="grid grid-cols-2 gap-2 text-white text-base">
+
+        <label class="font-semibold text-gray-400">Product Name</label>
+        <input value="Classic" readonly
+          class="p-2 rounded-lg w-full select-none pointer-events-none outline-none" style="background-color: #151515;">
+
+        <label class="font-semibold text-gray-400">Price (₹/KG)</label>
+        <input id="price1" value="220" readonly
+          class="p-2 rounded-lg w-full select-none pointer-events-none outline-none" style="background-color: #151515;">
+
+        <label class="font-semibold text-gray-400">Commission (₹/KG)</label>
+        <input id="comm1" value="10" readonly
+          class="p-2 rounded-lg w-full select-none pointer-events-none outline-none" style="background-color: #151515;">
+
+        <label class="font-semibold text-gray-400">Sold Quantity (KG)</label>
+        <input id="sold1" oninput="calculate()"
+          class="p-2 rounded-lg w-full text-white outline-none" style="background-color: #333333;" placeholder="Enter KG">
+
+        <label class="font-semibold text-gray-300">Your Commission</label>
+        <input id="amount1" readonly value="₹0"
+          class="p-2 rounded-lg bg-black w-full select-none outline-none" style="color: green;">
+      </div>
+    </div>
+
+    <!-- PRODUCT 2 -->
+    <div class="p-4 rounded-2xl shadow-lg" style="background-color:#222222;">
+      <div class="grid grid-cols-2 gap-2 text-white text-base">
+
+        <label class="font-semibold text-gray-400">Product Name</label>
+        <input value="Family" readonly
+          class="p-2 rounded-lg w-full select-none pointer-events-none outline-none" style="background-color: #151515;">
+
+        <label class="font-semibold text-gray-400">Price (₹/KG)</label>
+        <input id="price2" value="260" readonly
+          class="p-2 rounded-lg w-full select-none pointer-events-none outline-none" style="background-color: #151515;">
+
+        <label class="font-semibold text-gray-400">Commission (₹/KG)</label>
+        <input id="comm2" value="15" readonly
+          class="p-2 rounded-lg w-full select-none pointer-events-none outline-none" style="background-color: #151515;">
+
+        <label class="font-semibold text-gray-400">Sold Quantity (KG)</label>
+        <input id="sold2" oninput="calculate()"
+          class=" p-2 rounded-lg w-full text-white outline-none" style="background-color: #333333;" placeholder="Enter KG">
+
+        <label class="font-semibold text-gray-300">Your Commission</label>
+        <input id="amount2" readonly value="₹0"
+          class="p-2 rounded-lg bg-black w-full select-none outline-none" style="color: green;">
+      </div>
+    </div>
+
+    <!-- PRODUCT 3 -->
+    <div class="p-4 rounded-2xl shadow-lg" style="background-color:#222222;">
+      <div class="grid grid-cols-2 gap-2 text-white text-base">
+
+        <label class="font-semibold text-gray-400">Product Name</label>
+        <input value="Majestic" readonly
+          class="p-2 rounded-lg w-full select-none pointer-events-none outline-none" style="background-color: #151515;">
+
+        <label class="font-semibold text-gray-300">Price (₹/KG)</label>
+        <input id="price3" value="320" readonly
+          class="p-2 rounded-lg w-full select-none pointer-events-none outline-none" style="background-color: #151515;">
+
+        <label class="font-semibold text-gray-400">Commission (₹/KG)</label>
+        <input id="comm3" value="20" readonly
+          class="p-2 rounded-lg w-full select-none pointer-events-none outline-none" style="background-color: #151515;">
+
+        <label class="font-semibold text-gray-400">Sold Quantity (KG)</label>
+        <input id="sold3" oninput="calculate()"
+          class="p-2 rounded-lg w-full text-white outline-none" style="background-color: #333333;" placeholder="Enter KG">
+
+        <label class="font-semibold text-gray-300">Your Commission</label>
+        <input id="amount3" readonly value="₹0"
+          class="p-2 rounded-lg bg-black w-full select-none outline-none" style="color: green;">
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FIXED TOTAL FOOTER -->
+ <!-- FIXED TOTAL FOOTER -->
+<div class="fixed bottom-0 left-0 right-0 py-4 text-xl shadow-xl flex justify-between items-center px-6"
+     style="background-color:#111111;">
+    <span class="text-gray-400">Total combine Commission:</span>
+    <span id="total" class="text-green-700">₹0</span>
+</div>
+
+
+<script>
+function calculate(){
+  let c1 = document.getElementById("comm1").value * (document.getElementById("sold1").value || 0);
+  let c2 = document.getElementById("comm2").value * (document.getElementById("sold2").value || 0);
+  let c3 = document.getElementById("comm3").value * (document.getElementById("sold3").value || 0);
+
+  document.getElementById("amount1").value = "₹" + c1;
+  document.getElementById("amount2").value = "₹" + c2;
+  document.getElementById("amount3").value = "₹" + c3;
+
+  document.getElementById("total").innerText = "₹" + (c1 + c2 + c3);
+}
+</script>
+
+</body>
+</html>
