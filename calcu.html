@@ -28,11 +28,11 @@
           class="p-2 rounded-lg w-full select-none pointer-events-none outline-none" style="background-color: #151515;">
 
         <label class="font-semibold text-gray-400">Price (₹/KG)</label>
-        <input id="price1" value="220" readonly
+        <input id="price1" value="240" readonly
           class="p-2 rounded-lg w-full select-none pointer-events-none outline-none" style="background-color: #151515;">
 
         <label class="font-semibold text-gray-400">Commission (₹/KG)</label>
-        <input id="comm1" value="10" readonly
+        <input id="comm1" value="10.5" readonly
           class="p-2 rounded-lg w-full select-none pointer-events-none outline-none" style="background-color: #151515;">
 
         <label class="font-semibold text-gray-400">Sold Quantity (KG)</label>
@@ -58,7 +58,7 @@
           class="p-2 rounded-lg w-full select-none pointer-events-none outline-none" style="background-color: #151515;">
 
         <label class="font-semibold text-gray-400">Commission (₹/KG)</label>
-        <input id="comm2" value="15" readonly
+        <input id="comm2" value="yet to live" readonly
           class="p-2 rounded-lg w-full select-none pointer-events-none outline-none" style="background-color: #151515;">
 
         <label class="font-semibold text-gray-400">Sold Quantity (KG)</label>
@@ -84,7 +84,7 @@
           class="p-2 rounded-lg w-full select-none pointer-events-none outline-none" style="background-color: #151515;">
 
         <label class="font-semibold text-gray-400">Commission (₹/KG)</label>
-        <input id="comm3" value="20" readonly
+        <input id="comm3" value="yet to live" readonly
           class="p-2 rounded-lg w-full select-none pointer-events-none outline-none" style="background-color: #151515;">
 
         <label class="font-semibold text-gray-400">Sold Quantity (KG)</label>
@@ -110,17 +110,28 @@
 
 <script>
 function calculate(){
-  let c1 = document.getElementById("comm1").value * (document.getElementById("sold1").value || 0);
-  let c2 = document.getElementById("comm2").value * (document.getElementById("sold2").value || 0);
-  let c3 = document.getElementById("comm3").value * (document.getElementById("sold3").value || 0);
+  let price = 240; // MRP per kg (change or fetch dynamically if needed)
 
-  document.getElementById("amount1").value = "₹" + c1;
-  document.getElementById("amount2").value = "₹" + c2;
-  document.getElementById("amount3").value = "₹" + c3;
+  let sold1 = document.getElementById("sold1").value || 0;
+  let sold2 = document.getElementById("sold2").value || 0;
+  let sold3 = document.getElementById("sold3").value || 0;
 
-  document.getElementById("total").innerText = "₹" + (c1 + c2 + c3);
+  let comm1 = document.getElementById("comm1").value || 0;
+  let comm2 = document.getElementById("comm2").value || 0;
+  let comm3 = document.getElementById("comm3").value || 0;
+
+  let c1 = price * sold1 * comm1 / 100;
+  let c2 = price * sold2 * comm2 / 100;
+  let c3 = price * sold3 * comm3 / 100;
+
+  document.getElementById("amount1").value = "₹" + c1.toFixed(2);
+  document.getElementById("amount2").value = "₹" + c2.toFixed(2);
+  document.getElementById("amount3").value = "₹" + c3.toFixed(2);
+
+  document.getElementById("total").innerText = "₹" + (c1 + c2 + c3).toFixed(2);
 }
 </script>
+
 
 </body>
 </html>
